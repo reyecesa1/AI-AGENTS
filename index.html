@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .showcase-section {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .content-half {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .video-half {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container {
+            width: 90%;
+            height: 70vh;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #444;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .content-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: #ccc;
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: transparent;
+            color: #f5f5f5;
+            border: 1px solid #f5f5f5;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+
+        /* Alternating layout */
+        .section-1 .content-half {
+            order: 1;
+        }
+
+        .section-1 .video-half {
+            order: 2;
+        }
+
+        .section-2 .content-half {
+            order: 2;
+        }
+
+        .section-2 .video-half {
+            order: 1;
+        }
+
+        .section-3 .content-half {
+            order: 1;
+        }
+
+        .section-3 .video-half {
+            order: 2;
+        }
+
+        /* Responsive design */
+        @media (max-width: 900px) {
+            .showcase-section {
+                flex-direction: column;
+                padding: 60px 0;
+            }
+            
+            .content-half, .video-half {
+                width: 100%;
+                padding: 20px;
+            }
+            
+            .video-container {
+                height: 50vh;
+            }
+            
+            .content-title {
+                font-size: 2rem;
+            }
+            
+            .section-1 .content-half,
+            .section-2 .content-half,
+            .section-3 .content-half {
+                order: 1;
+            }
+            
+            .section-1 .video-half,
+            .section-2 .video-half,
+            .section-3 .video-half {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Section 1 -->
+        <section class="showcase-section section-1">
+            <div class="content-half">
+                <h2 class="content-title">Urban Exploration</h2>
+                <p class="content-text">
+                    Discover hidden corners of the city through our curated visual journeys. 
+                    Each frame tells a story of urban life, architecture, and the spaces between.
+                </p>
+                <a href="#" class="btn">Take Me There</a>
+            </div>
+            <div class="video-half">
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        [Video: Urban Exploration]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="showcase-section section-2">
+            <div class="content-half">
+                <h2 class="content-title">Natural Wonders</h2>
+                <p class="content-text">
+                    Immerse yourself in breathtaking landscapes and untouched wilderness. 
+                    Experience the raw beauty of nature through our cinematic explorations.
+                </p>
+                <a href="#" class="btn">Take Me There</a>
+            </div>
+            <div class="video-half">
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        [Video: Natural Wonders]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="showcase-section section-3">
+            <div class="content-half">
+                <h2 class="content-title">Abstract Forms</h2>
+                <p class="content-text">
+                    Explore the intersection of art and motion in our abstract visual series. 
+                    A meditation on shape, color, and movement in pure form.
+                </p>
+                <a href="#" class="btn">Take Me There</a>
+            </div>
+            <div class="video-half">
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        [Video: Abstract Forms]
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Simple animation for button hover effect
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
